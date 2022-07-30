@@ -1,0 +1,29 @@
+{
+  "name": "sure-icons-svg",
+  "version": "0.0.0",
+  "description": "SVG icon for Sure UI Icons collection.",
+  "license": "MIT",
+  "homepage": "https://github.com/suressk/sure-icons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suressk/sure-icons.git",
+    "directory": "packages/svg"
+  },
+  "bugs": {
+    "url": "https://github.com/suressk/sure-icons/issues"
+  },
+  "keywords": [
+    "icon",
+    "svg",
+    "sure-ui"
+  ],
+  "files": [
+    "*.svg"
+  ],
+  "scripts": {
+    "optimize": "svgo -f . -o ."
+  },
+  "devDependencies": {
+    "svgo": "^2.8.0"
+  }
+}
