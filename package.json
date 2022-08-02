@@ -24,6 +24,8 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "dev:vue": "pnpm run -C ./playground/vue-pro dev",
+    "dev:react": "pnpm run -C ./playground/react-pro dev",
     "build": "pnpm run build:vue && pnpm run build:react",
     "build:vue": "pnpm run -C ./packages/vue build",
     "build:react": "pnpm run -C ./packages/react build",
@@ -39,6 +41,7 @@
     "@types/node": "^18.0.0",
     "@types/prompts": "^2.0.14",
     "@types/semver": "^7.3.10",
+    "bumpp": "^8.2.1",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.18.0",
     "eslint-config-suressk": "^0.1.2",
