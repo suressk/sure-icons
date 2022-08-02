@@ -69,13 +69,13 @@ import { getRandomHex } from 'sure-utils'
 [![NPM version](https://img.shields.io/npm/v/sure-icons-react?color=f40&label=sure-icons-react)](https://www.npmjs.com/package/sure-icons-react)
 
 ```bash
-npm i sure-icons-vue
+npm i sure-icons-react
 ```
 
 In `.tsx` / `.jsx` file:
 
 ```tsx
-import * as icons from 'sure-icons-vue'
+import * as icons from 'sure-icons-react'
 import { getRandomHex } from 'sure-utils'
 
 const IconsComponents = Object.entries(icons)
