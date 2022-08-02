@@ -1,6 +1,6 @@
 {
   "name": "sure-icons-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue components of Sure UI Icons collection.",
   "author": {
     "name": "Saul",
@@ -59,6 +59,7 @@
     "tsx": "^3.6.0",
     "typescript": "^4.7.4",
     "unplugin-vue": "^2.2.1",
+    "vite": "^3.0.4",
     "vue": "^3.2.37",
     "vue-tsc": "^0.38.2"
   }
