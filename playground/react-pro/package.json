@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sure-icons-react": "workspace:^0.0.0",
+    "sure-utils": "^1.1.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
