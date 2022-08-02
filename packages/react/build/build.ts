@@ -19,27 +19,27 @@ const buildBundle = async () => {
       target: 'es2018',
       platform: 'neutral',
       plugins: [
-        vue({
-          isProduction: true
-        })
+        // vue({
+        //   isProduction: true
+        // })
       ],
       bundle: true,
       format,
       minifySyntax: true,
       banner: {
-        js: `/*! Sure UI Icons Vue v${version} */\n`
+        js: `/*! Sure UI Icons React v${version} */\n`
       },
       outdir: pathOutput
     }
     if (format === 'iife') {
       options.plugins!.push(
         GlobalsPlugin({
-          vue: 'Vue'
+          react: 'React'
         })
       )
-      options.globalName = 'SureIconsVue'
+      options.globalName = 'SureIconsReact'
     } else {
-      options.external = ['vue']
+      options.external = ['react']
     }
 
     return options

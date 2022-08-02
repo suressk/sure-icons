@@ -10,7 +10,7 @@
   "keywords": [
     "icon",
     "svg",
-    "vue",
+    "react",
     "sure-ui"
   ],
   "exports": {
@@ -38,7 +38,7 @@
     "build": "pnpm run build:generate && run-p build:build build:types",
     "build:generate": "tsx build/generate.ts",
     "build:build": "tsx build/build.ts",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly"
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist/types"
   },
   "devDependencies": {
     "@pnpm/find-workspace-dir": "^4.0.2",
