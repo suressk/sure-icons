@@ -27,10 +27,11 @@ const getSvgFiles = async () => {
 const getName = (file: string) => {
   const filename = path.basename(file).replace('.svg', '')
   // => 大驼峰命名
-  const componentName = camelcase(filename, { pascalCase: true })
+  const camelcaseName = camelcase(filename, { pascalCase: true })
+  // const componentName = camelcase(filename, { pascalCase: true })
   return {
-    filename,
-    componentName
+    filename: camelcaseName,
+    componentName: camelcaseName
   }
 }
 
