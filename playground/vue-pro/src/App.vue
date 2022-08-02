@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import { Apple, Chrome, Flash } from 'sure-icons-vue'
 import * as icons from 'sure-icons-vue'
+import { getRandomHex } from 'sure-utils'
 </script>
 
 <template>
   <div class="container">
-    <component :is="Icon" v-for="(Icon, key) in icons" :key="key" class="icon" />
+    <component
+      :is="Icon"
+      v-for="(Icon, key) in icons"
+      :key="key"
+      class="icon"
+      :style="{
+        color: getRandomHex()
+      }"
+    />
   </div>
 </template>
 
@@ -23,6 +31,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 0 20px;
 }
 .icon {
   height: 2em;
