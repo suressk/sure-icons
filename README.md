@@ -54,6 +54,9 @@ import { getRandomHex } from 'sure-utils'
       v-for="(Icon, key) in icons"
       :key="key"
       class="icon"
+      :class="{
+        icon_loading: Icon.name === 'Loading'
+      }"
       :style="{
         color: getRandomHex()
       }"
@@ -86,9 +89,16 @@ const Comp: React.FC<ICompProps> = () => {
   const Icons = IconsComponents.map((Icon) => {
     const [name, Comp] = Icon
     return (
-      <i className={styles.icon} key={name} style={{
-        color: getRandomHex()
-      }}>
+      <i
+        className={`
+          ${name === 'Loading' ? styles.icon_loading : ''}
+          ${styles.icon}
+        `}
+        key={name}
+        style={{
+          color: getRandomHex()
+        }}
+      >
         <Comp />
       </i>
     )
