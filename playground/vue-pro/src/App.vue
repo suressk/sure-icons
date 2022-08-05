@@ -10,6 +10,9 @@ import { getRandomHex } from 'sure-utils'
       v-for="(Icon, key) in icons"
       :key="key"
       class="icon"
+      :class="{
+        icon_loading: Icon.name === 'Loading'
+      }"
       :style="{
         color: getRandomHex()
       }"
@@ -22,8 +25,9 @@ import { getRandomHex } from 'sure-utils'
 body {
   margin: 0;
   padding: 0;
-  background-color: #141414;
+  background-color: #010409;
 }
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -33,6 +37,7 @@ body {
   flex-wrap: wrap;
   padding: 0 20px;
 }
+
 .icon {
   height: 2em;
   width: 2em;
@@ -41,6 +46,21 @@ body {
   transition: all .3s ease-in-out;
   cursor: pointer;
 }
+
+.icon_loading {
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
 .icon:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
   /* filter: drop-shadow(0 0 2em #42b883aa); */
