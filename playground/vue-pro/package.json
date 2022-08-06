@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "sure-icons-vue": "workspace:^0.0.1",
-    "sure-utils": "^1.1.3",
+    "sure-icons-vue": "workspace:^0.0.2",
+    "sure-utils": "^1.1.4",
     "vue": "^3.2.37"
   },
   "devDependencies": {
