@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import * as icons from 'sure-icons-vue'
-import { getRandomHex } from 'sure-utils'
+import { generateRandomHex } from 'sure-utils'
 </script>
 
 <template>
   <div class="container">
-    <component
-      :is="Icon"
+    <i
       v-for="(Icon, key) in icons"
       :key="key"
       class="icon"
@@ -14,9 +13,11 @@ import { getRandomHex } from 'sure-utils'
         icon_loading: Icon.name === 'Loading'
       }"
       :style="{
-        color: getRandomHex()
+        color: generateRandomHex()
       }"
-    />
+    >
+      <component :is="Icon" />
+    </i>
   </div>
 </template>
 
@@ -30,7 +31,7 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
