@@ -49,8 +49,7 @@ import { getRandomHex } from 'sure-utils'
 
 <template>
   <div class="container">
-    <component
-      :is="Icon"
+    <i
       v-for="(Icon, key) in icons"
       :key="key"
       class="icon"
@@ -58,9 +57,11 @@ import { getRandomHex } from 'sure-utils'
         icon_loading: Icon.name === 'Loading'
       }"
       :style="{
-        color: getRandomHex()
+        color: generateRandomHex()
       }"
-    />
+    >
+      <component :is="Icon" />
+    </i>
   </div>
 </template>
 ```
@@ -79,34 +80,33 @@ In `.tsx` / `.jsx` file:
 
 ```tsx
 import * as icons from 'sure-icons-react'
-import { getRandomHex } from 'sure-utils'
+import { generateRandomHex } from 'sure-utils'
 
 const IconsComponents = Object.entries(icons)
 
 interface ICompProps {}
 
 const Comp: React.FC<ICompProps> = () => {
-  const Icons = IconsComponents.map((Icon) => {
-    const [name, Comp] = Icon
+  const Icons = useMemo(() => IconsComponents.map(([name, Comp]) => {
+    const cls = `icon ${name === 'Loading' ? 'icon_loading' : ''}`
+
     return (
       <i
-        className={`
-          ${name === 'Loading' ? styles.icon_loading : ''}
-          ${styles.icon}
-        `}
+        className={cls}
         key={name}
         style={{
-          color: getRandomHex()
+          color: generateRandomHex()
         }}
       >
         <Comp />
       </i>
     )
-  })
+  }), [])
+
   return (
-    <>
+    <div className="app">
       {Icons}
-    </>
+    </div>
   )
 }
 
