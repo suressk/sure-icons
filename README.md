@@ -44,7 +44,7 @@ In `.vue` file:
 
 import * as icons from 'sure-icons-vue'
 // Generate random hexadecimal color values
-import { getRandomHex } from 'sure-utils'
+import { generateRandomHex } from 'sure-utils'
 </script>
 
 <template>
