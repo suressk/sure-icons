@@ -1,7 +1,8 @@
 <script lang="ts">
 import type { DefineComponent } from 'vue'
 export default {
-  name: 'Flash'
+  name: 'Flash',
+  inheritAttrs: false
 } as DefineComponent
 </script>
 

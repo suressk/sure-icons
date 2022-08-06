@@ -41,7 +41,8 @@ const formatCode = (
 ) => format(code, {
   parser,
   semi: false,
-  singleQuote: true
+  singleQuote: true,
+  trailingComma: 'none'
 })
 
 const transformToReactComponent = async (file: string) => {

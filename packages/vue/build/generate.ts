@@ -41,25 +41,35 @@ const formatCode = (
 ) => format(code, {
   parser,
   semi: false,
-  singleQuote: true
+  singleQuote: true,
+  trailingComma: 'none'
 })
 
+/*
+<script setup lang="ts">
+defineOptions({
+  name: '${componentName}',
+  inheritAttrs: false
+})
+</script>
+*/
 const transformToVueComponent = async (file: string) => {
   const content = await readFile(file, 'utf-8')
   const { filename, componentName } = getName(file)
   const vue = formatCode(
-    `
+`
 <script lang="ts">
 import type { DefineComponent } from 'vue'
 export default ({
-  name: "${componentName}"
+  name: '${componentName}',
+  inheritAttrs: false
 }) as DefineComponent
 </script>
 
 <template>
   ${content}
 </template>`,
-    'vue'
+'vue'
   )
   writeFile(path.resolve(pathComponents, `${filename}.vue`), vue, 'utf-8')
 }

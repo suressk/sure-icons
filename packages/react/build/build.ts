@@ -3,7 +3,6 @@ import consola from 'consola'
 import colors from 'picocolors'
 import { build } from 'esbuild'
 import GlobalsPlugin from 'esbuild-plugin-globals'
-// import vue from 'unplugin-vue/esbuild'
 import { emptyDir } from 'fs-extra'
 import type { BuildOptions, Format } from 'esbuild'
 import { version } from '../package.json'
@@ -18,11 +17,7 @@ const buildBundle = async () => {
       ],
       target: 'es2018',
       platform: 'neutral',
-      plugins: [
-        // vue({
-        //   isProduction: true
-        // })
-      ],
+      plugins: [],
       bundle: true,
       format,
       minifySyntax: true,

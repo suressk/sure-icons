@@ -114,6 +114,7 @@ importers:
       tsx: ^3.6.0
       typescript: ^4.7.4
       unplugin-vue: ^2.2.1
+      unplugin-vue-define-options: ^0.7.3
       vite: ^3.0.4
       vue: ^3.2.37
       vue-tsc: ^0.38.2
@@ -136,6 +137,7 @@ importers:
       tsx: 3.8.0
       typescript: 4.7.4
       unplugin-vue: 2.2.1_vvf4jxzygi2j43m6qowq2ejfoq
+      unplugin-vue-define-options: 0.7.3_vvf4jxzygi2j43m6qowq2ejfoq
       vite: 3.0.4
       vue: 3.2.37
       vue-tsc: 0.38.9_typescript@4.7.4
@@ -4772,6 +4774,23 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
+  /unplugin-vue-define-options/0.7.3_vvf4jxzygi2j43m6qowq2ejfoq:
+    resolution: {integrity: sha512-VbexYR8m2v/TLi49+F7Yf3rO2EyS0EkrXjJxqym6W0NxOzom9zdmRUR+av4UAu4GruhMumJc/9ITS1Wj+rozjg==}
+    engines: {node: '>=14.19.0'}
+    peerDependencies:
+      vue: ^3.2.25
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      '@vue/compiler-sfc': 3.2.37
+      unplugin: 0.8.1_esbuild@0.14.51+vite@3.0.4
+      vue: 3.2.37
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - vite
+      - webpack
+    dev: true
+
   /unplugin-vue/2.2.1_vvf4jxzygi2j43m6qowq2ejfoq:
     resolution: {integrity: sha512-MToZFqW7v6dKqm2QatKCegWoQ0FwucSASbz1TPtyDV4t020whxGn44+HfD4V38NjoMyiin/0Z03vs1yn5yF1vQ==}
     engines: {node: '>=14.17.0'}
@@ -4814,6 +4833,31 @@ packages:
       webpack:
         optional: true
     dependencies:
+      chokidar: 3.5.3
+      esbuild: 0.14.51
+      vite: 3.0.4
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.4.4
+    dev: true
+
+  /unplugin/0.8.1_esbuild@0.14.51+vite@3.0.4:
+    resolution: {integrity: sha512-o7rUZoPLG1fH4LKinWgb77gDtTE6mw/iry0Pq0Z5UPvZ9+HZ1/4+7fic7t58s8/CGkPrDpGq+RltO+DmswcR4g==}
+    peerDependencies:
+      esbuild: '>=0.13'
+      rollup: ^2.50.0
+      vite: ^2.3.0 || ^3.0.0-0
+      webpack: 4 || 5
+    peerDependenciesMeta:
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      acorn: 8.8.0
       chokidar: 3.5.3
       esbuild: 0.14.51
       vite: 3.0.4

@@ -1,7 +1,8 @@
 <script lang="ts">
 import type { DefineComponent } from 'vue'
 export default {
-  name: 'Night'
+  name: 'Night',
+  inheritAttrs: false
 } as DefineComponent
 </script>
 

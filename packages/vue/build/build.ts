@@ -3,6 +3,7 @@ import consola from 'consola'
 import colors from 'picocolors'
 import { build } from 'esbuild'
 import GlobalsPlugin from 'esbuild-plugin-globals'
+import DefineOptions from 'unplugin-vue-define-options/esbuild'
 import vue from 'unplugin-vue/esbuild'
 import { emptyDir } from 'fs-extra'
 import type { BuildOptions, Format } from 'esbuild'
@@ -21,7 +22,8 @@ const buildBundle = async () => {
       plugins: [
         vue({
           isProduction: true
-        })
+        }),
+        DefineOptions()
       ],
       bundle: true,
       format,

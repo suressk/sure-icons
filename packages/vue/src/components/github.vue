@@ -1,7 +1,8 @@
 <script lang="ts">
 import type { DefineComponent } from 'vue'
 export default {
-  name: 'Github'
+  name: 'Github',
+  inheritAttrs: false
 } as DefineComponent
 </script>
 
