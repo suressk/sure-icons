@@ -1,19 +1,43 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import * as icons from 'sure-icons-vue'
 import { generateRandomHex } from 'sure-utils'
+
+const iconName = ref('')
+
+// 优化颜色值显示，否则每次点击都会导致 icon 图标重新渲染
+const iconsLen = Object.entries(icons).length
+const colors: string[] = new Array(iconsLen)
+
+for (let i = 0; i < iconsLen; i++) {
+  colors[i] = generateRandomHex()
+}
+
+/**
+ * 点击到 svg / path 标签，显示 icon 图标的名称（取巧 + 事件代理方案实现）
+ * @param e MouseEvent
+ */
+const handleClick = (e: any) => {
+  if (e.target?.tagName === 'path' || e.target?.tagName === 'svg') {
+    iconName.value = e.target?.__vueParentComponent?.type?.name || ''
+  }
+}
 </script>
 
 <template>
-  <div class="container">
+  <p class="icon-name">
+    clicked icon: <span>{{ iconName }}</span>
+  </p>
+  <div class="container" @click="handleClick">
     <i
-      v-for="(Icon, key) in icons"
+      v-for="(Icon, key, idx) in icons"
       :key="key"
       class="icon"
       :class="{
-        icon_loading: Icon.name === 'Loading'
+        icon_loading: key === 'Loading'
       }"
       :style="{
-        color: generateRandomHex()
+        color: colors[idx]
       }"
     >
       <component :is="Icon" />
@@ -22,11 +46,29 @@ import { generateRandomHex } from 'sure-utils'
 </template>
 
 <style>
-:root,
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root,
+body {
   background-color: #010409;
+}
+
+.icon-name {
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+}
+
+.icon-name span {
+  color: #409eff;
+  font-weight: 700;
 }
 
 .container {

@@ -1,6 +1,10 @@
-:root, body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root, body {
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -16,6 +20,20 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 0 20px;
+}
+
+.icon-name {
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+}
+
+.icon-name span {
+  color: #409eff;
+  font-weight: 700;
 }
 
 .icon {
