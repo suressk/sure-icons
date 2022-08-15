@@ -40,7 +40,7 @@ In `.vue` file:
 
 ```vue
 <script setup lang="ts">
-// import { Apple } from 'sure-icons-vue'
+// import { Wechat, Github } from 'sure-icons-vue'
 
 import * as icons from 'sure-icons-vue'
 // Generate random hexadecimal color values
